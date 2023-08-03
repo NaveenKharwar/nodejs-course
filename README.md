@@ -25,9 +25,9 @@ This repository is organized into different modules and projects, each correspon
 
 Here are some of the key projects I've worked on during the course:
 
-1. [Note App](https://github.com/NaveenKharwar/nodejs-course/tree/master/notes-app): A simple command-line note-taking application using Node.js.
-1. [Node.js Terminal-Based Weather App](https://github.com/NaveenKharwar/nodejs-course/tree/master/weather-app): A simple command-line weather app using Node.js.
-1. [Weather App with UI](https://github.com/NaveenKharwar/nodejs-course/tree/master/weather-app-ui): A simple weather app using Node.js.
+1. [Note App](https://github.com/NaveenKharwar/nodejs-course/tree/main/notes-app): A simple command-line note-taking application using Node.js.
+1. [Node.js Terminal-Based Weather App](https://github.com/NaveenKharwar/nodejs-course/tree/main/weather-app): A simple command-line weather app using Node.js.
+1. [Weather App with UI](https://github.com/NaveenKharwar/nodejs-course/tree/main/weather-app-ui): A simple weather app using Node.js.
 
 
 ## Getting Started
