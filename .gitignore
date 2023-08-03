@@ -1,0 +1,4 @@
+# Ignore node_modules folder and its contents
+node_modules/
+notes-app/notes.json
+.env
