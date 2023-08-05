@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>Weather</title>
-		<link rel="icon" href="/img/weather.png">
-		<link rel="stylesheet" href="/css/style.css">
-	</head>
 
-	<body>
-		<div class="main-content">
-			{{>header}}
-			<p>Use this site to get your weather!</p>
-			<form>
-				<input placeholder="Location">
-				<button class="search-btn">Search</button>
-			</form>
-			<p id="message-one"></p>
-			<p id="message-two"></p>
+<head>
+	<title>Weather</title>
+	<link rel="icon" href="/img/weather.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="main-content">
+		{{>header}}
+		<p>Use this site to get your weather!</p>
+		<div class="container">
+			<section class="weather__section">
+				<div class="weather__input">
+					<header class="weather__section-header">
+						<p>Weather App</p>
+					</header>
+					<form class="weather__section-body">
+						<input placeholder="Enter City Name" type="text" />
+						<button class="weather__search-btn">Search</button>
+						<span></span>
+						<button class="weather__device-btn" disabled>Get Device Location</button>
+					</form>
+					<div class="weather__loading-container">
+						<div class="loading-spinner"></div>
+					</div>
+				</div>
+				<div class="weather__result">
+					<header class="weather__section-header">
+						<button id="weather__back-btn"><img src="/img/arrow-left.svg" alt="arrow icon">Weather
+							App</button>
+					</header>
+					<div class="weather__section-body">
+						<p id="searched-term"></p>
+						<img id="weather__icon" src=""></img>
+						<p id="weather__result-temperature"></p>
+						<p id="weather__result-feelslike"></p>
+						<p id="weather__result-description"></p>
+						<div class="weather__location"><img src="/img/map-pin.svg" alt="arrow icon"><p id="location"></p></div>
+					</div>
+					<footer class="weather__section-footer">
+						<div class="wind_speed_wrap"><img src="/img/wind.svg" alt="wind icon"><p><span id="wind_speed"></span></p></div>
+						<div class="humidity__wrap"><img src="/img/droplet.svg" alt="drop icon"><p><span id="humidity"></span></p></div>
+					</footer>
+				</div>
+			</section>
 		</div>
-		{{>footer}}
-		<script src="/js/app.js"></script>
-	</body>
+	</div>
+	{{>footer}}
+	<script src="/js/app.js"></script>
+</body>
+
 </html>
