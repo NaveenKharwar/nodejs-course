@@ -11,7 +11,16 @@ const forcast = (latitude, longitude, callback) => {
 		} else if (body.error) {
 			callback('Location not found or invalid API response', undefined)
 		} else {
-			callback (undefined, `${body.current.weather_descriptions[0]}. It is currenlty ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out`)
+			const weatherData = {
+				description: body.current.weather_descriptions,
+				temperature: body.current.temperature,
+				feelslike: body.current.feelslike,
+				humidity: body.current.humidity,
+				wind_speed: body.current.wind_speed,
+				humidity: body.current.humidity,
+				weatherIcon: body.current.weather_icons[0]
+			};
+			callback(undefined, weatherData);
 		}
 	})
 }

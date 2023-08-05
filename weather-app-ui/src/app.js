@@ -23,24 +23,10 @@ app.use(express.static(publicDirectoryPath))
 app.get ('', (req, res) => {
 	res.render('index', {
 		title: 'Weather App',
-		name: 'Naveen Kharwar'
+		name: 'Naveen'
 	})
 })
 
-app.get ('/about', (req, res) => {
-	res.render('about', {
-		title: 'About',
-		name: 'Naveen Kharwar'
-	})
-})
-
-app.get ('/help', (req, res) => {
-	res.render('help', {
-		title: 'Help',
-		message: 'Hello! how may I help you today?',
-		name: 'Naveen Kharwar'
-	})
-})
 
 app.get( '/weather', (req, res) => {
 	if(!req.query.address) {
@@ -54,15 +40,21 @@ app.get( '/weather', (req, res) => {
 			return res.send({ error})
 		}
 
-		forcast(latitude, longitude, (error, forecastData) => {
+		forcast(latitude, longitude, (error, weatherData) => {
 			if (error) {
 				return res.send({ error })
 			}
 
 			res.send([{
-				forcast: forecastData,
+				forcast: weatherData.description,
+				temperature: weatherData.temperature,
+				feelslike: weatherData.feelslike,
 				location,
-				address: req.query.address
+				address: req.query.address,
+				humidity: weatherData.humidity,
+				wind_speed: weatherData.wind_speed,
+				humidity: weatherData.humidity,
+				weatherIcon: weatherData.weatherIcon
 			}])
 		})
 	})
