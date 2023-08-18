@@ -2,3 +2,4 @@
 node_modules/
 notes-app/notes.json
 .env
+task-manager/config/dev.env
